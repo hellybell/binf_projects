@@ -1,0 +1,172 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+    <script>
+    function scrollToId(id) {
+        var sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.scrollIntoView();
+            return true;
+        }
+        return false;
+    };
+
+    function setSelectedId(id) {
+        var sel_el = document.getElementsByClassName('selected')[0];
+        if (sel_el != undefined && sel_el.id != id) {
+           sel_el.className = 'normal';
+        }
+        sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.className = 'selected';
+            return true;
+        }
+        return false;
+    };
+    </script>
+
+</head><body onload="(function (id) {     setSelectedId(id); scrollToId(id); }(&quot;2528096642816&quot;));">
+
+ 
+
+<div id="2527905623344" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Tue Apr 13 21, 19:42:17</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> Stratified 10-fold Cross validation<br><b>Target class:</b> 3<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Model</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">AUC</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CA</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">F1</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Precision</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Recall</th></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Tree</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9409125188536953</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9727187206020697</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.823170731707317</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.8881578947368421</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.7670454545454546</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Random Forest</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9884523210993799</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9689557855126999</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.7770270270270271</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9583333333333335</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.6534090909090909</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">AdaBoost</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9938846991788168</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.989181561618062</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9325513196480938</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9636363636363636</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9034090909090909</td></tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">Part II 6.a
+If the goal is to have the hightest classification accuracy then you would use AdaBoost as it has a higher CA and precision compared to tree. AdaBoost fits the new model from the incorrect predictions, and random forest can run the risk of over fitting. Best to use an ensemble like Adaboost in this case.
+Part II 6.b
+You would use AdaBoost if you wanted to be sure to find all the cases of this clas because you want the smallest number of false negatives, and the highest prescision. 
+However there are arbitrary differenes between the metrics in this example except for the recall for random forest is lower, meaning the number of positive results returned is not doing as good of a job compared to the other two. </textarea></div></div><div id="2528096642816" class="selected" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Test and Score <span class="timestamp">Tue Apr 13 21, 20:41:08</span></h1><div class="content">
+<h2>Settings</h2><ul><b>Sampling type:</b> Stratified 10-fold Cross validation<br><b>Target class:</b> 3<br></ul><h2>Scores</h2><table>
+<tbody><tr><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Model</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">AUC</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">CA</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">F1</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Precision</th><th style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Recall</th></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">kNN</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9807549857549857</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9731890874882408</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.8155339805825242</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9473684210526315</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.7159090909090909</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Tree</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.8852220546338195</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9355597365945437</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.4315352697095436</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.8</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.29545454545454547</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Stack</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9896246019775431</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9755409219190969</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.8424242424242423</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9025974025974026</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.7897727272727273</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">SVM</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9842885872297638</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9656632173095014</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.7859237536656891</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.8121212121212121</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.7613636363636364</td></tr><tr><td style="color:black;border:0;background:transparent;text-align:left;vertical-align:middle;">Naive Bayes</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9241251885369532</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.9463781749764817</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.6935483870967741</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.6581632653061225</td><td style="color:black;border:0;background:transparent;text-align:right;vertical-align:middle;">0.7329545454545454</td></tr><tr><td style="color:black;border:1px solid black;background:transparent;text-align:left;vertical-align:middle;">Logistic Regression</td><td style="color:black;border:1px solid black;background:transparent;text-align:right;vertical-align:middle;">0.983154013742249</td><td style="color:black;border:1px solid black;background:transparent;text-align:right;vertical-align:middle;">0.967074317968015</td><td style="color:black;border:1px solid black;background:transparent;text-align:right;vertical-align:middle;">0.7904191616766467</td><td style="color:black;border:1px solid black;background:transparent;text-align:right;vertical-align:middle;">0.8354430379746834</td><td style="color:black;border:1px solid black;background:transparent;text-align:right;vertical-align:middle;">0.75</td></tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);">IDK WHY LOGISTIC REGRESSION HAS A BOX
+Part III 11.a
+In terms of general accuracy the stacked combination did the best compared to the individual classifiers, as well as in regards to recall as well (though not significantly better with SVM they are just about the same). 
+No, the classifiers are not always in the same order, they change depending on the metric.
+Yes, in this case stacking is more effective because it averages out the biases in the individual classfiation. in this particular case though i don't think stacking makes a super significant difference. But if you had a classifier method that threw alot of false positives or something then stacking would make a difference.</textarea></div></div></body></html>
